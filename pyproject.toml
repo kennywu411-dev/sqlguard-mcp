@@ -1,0 +1,38 @@
+[project]
+name = "sqlguard-mcp"
+version = "0.1.0"
+description = "Read-only SQLite MCP server with layered SQL defenses for AI agents"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["mcp", "sqlite", "text-to-sql", "llm", "agent", "security"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Database",
+    "Intended Audience :: Developers",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=2.3",
+    "sqlglot>=30.24.0",
+]
+
+[project.scripts]
+sqlguard-mcp = "sqlguard_mcp.server:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.17.2",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 110
