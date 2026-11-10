@@ -4,7 +4,7 @@
 
 A read-only SQLite MCP server for AI agents. It lets Claude Code, Claude Desktop or any MCP client explore and query SQLite databases, and it is built so that a model cannot change your data even when it tries to.
 
-It was extracted from DataPilot, a text-to-SQL project evaluated on the BIRD Mini-Dev benchmark, where the same guard ran tens of thousands of model-generated queries and a prompt-injection test.
+It was extracted from [DataPilot](https://github.com/kennywu411-dev/datapilot), a text-to-SQL project evaluated on the BIRD Mini-Dev benchmark, where the same guard ran about 20,000 model-generated queries and a prompt-injection test.
 
 ## Why another SQLite server
 
@@ -32,11 +32,13 @@ SQL that sqlglot cannot parse is still passed to SQLite, so the agent gets SQLit
 
 ## Usage
 
-Install from PyPI (once published) or run from a checkout:
+Run it straight from GitHub with [uv](https://docs.astral.sh/uv/):
 
 ```bash
-uvx sqlguard-mcp path/to/shop.db
+uvx --from git+https://github.com/kennywu411-dev/sqlguard-mcp sqlguard-mcp path/to/shop.db
 ```
+
+Or from a checkout, with more than one database and your own limits:
 
 ```bash
 uv run sqlguard-mcp path/to/shop.db path/to/folder_of_dbs --timeout 30 --max-rows 1000
@@ -45,7 +47,7 @@ uv run sqlguard-mcp path/to/shop.db path/to/folder_of_dbs --timeout 30 --max-row
 Add it to Claude Code:
 
 ```bash
-claude mcp add sqlguard -- uv run --directory /path/to/sqlguard-mcp sqlguard-mcp /path/to/shop.db
+claude mcp add sqlguard -- uvx --from git+https://github.com/kennywu411-dev/sqlguard-mcp sqlguard-mcp /path/to/shop.db
 ```
 
 Inspect it with the MCP Inspector:
