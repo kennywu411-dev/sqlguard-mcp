@@ -4,7 +4,7 @@
 
 A read-only SQLite MCP server for AI agents. It lets Claude Code, Claude Desktop or any MCP client explore and query SQLite databases, and it is built so that a model cannot change your data even when it tries to.
 
-It was extracted from [DataPilot](https://github.com/kennywu411-dev/datapilot), a text-to-SQL project evaluated on the BIRD Mini-Dev benchmark, where the same guard ran about 20,000 model-generated queries and a prompt-injection test.
+It was extracted from [MetricLens](https://github.com/kennywu411-dev/metriclens), a text-to-SQL project evaluated on the BIRD Mini-Dev benchmark, where the same guard ran about 20,000 model-generated queries and a prompt-injection test.
 
 ## Why another SQLite server
 
