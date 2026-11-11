@@ -1,4 +1,4 @@
-# sqlguard-mcp
+# sqlguard-mcp：只读 SQL 防护 MCP 服务器
 
 [![CI](https://github.com/kennywu411-dev/sqlguard-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/kennywu411-dev/sqlguard-mcp/actions/workflows/ci.yml)
 
