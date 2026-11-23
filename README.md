@@ -32,10 +32,10 @@ SQL that sqlglot cannot parse is still passed to SQLite, so the agent gets SQLit
 
 ## Usage
 
-Run it straight from GitHub with [uv](https://docs.astral.sh/uv/):
+Run it from PyPI with [uv](https://docs.astral.sh/uv/), or install it with `pip install sqlguard-mcp`:
 
 ```bash
-uvx --from git+https://github.com/kennywu411-dev/sqlguard-mcp sqlguard-mcp path/to/shop.db
+uvx sqlguard-mcp path/to/shop.db
 ```
 
 Or from a checkout, with more than one database and your own limits:
@@ -47,7 +47,7 @@ uv run sqlguard-mcp path/to/shop.db path/to/folder_of_dbs --timeout 30 --max-row
 Add it to Claude Code:
 
 ```bash
-claude mcp add sqlguard -- uvx --from git+https://github.com/kennywu411-dev/sqlguard-mcp sqlguard-mcp /path/to/shop.db
+claude mcp add sqlguard -- uvx sqlguard-mcp /path/to/shop.db
 ```
 
 Inspect it with the MCP Inspector:
